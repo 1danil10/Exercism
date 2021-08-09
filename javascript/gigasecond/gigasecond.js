@@ -8,5 +8,5 @@ export const gigasecond = (date) => {
   const GIGA_SEC_IN_MS = GIGA_SEC * 1000;
   const currentDateinMS = date.getTime();
   const expectedDate = new Date(currentDateinMS + GIGA_SEC_IN_MS);
-  return new Date(expectedDate);
+  return expectedDate;
 };
