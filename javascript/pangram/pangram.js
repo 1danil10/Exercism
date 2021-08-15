@@ -3,6 +3,26 @@
 // convenience to get you started writing code faster.
 //
 
-export const isPangram = () => {
-  throw new Error('Remove this statement and implement this function');
+const alphabet = (() => {
+  let result = "";
+  const a = 97;
+  const z = 122;
+  let idx = a;
+
+  while (idx <= z) {
+    result += String.fromCharCode(idx);
+    idx++;
+  }
+  return result;
+})();
+
+export const isPangram = (str) => {
+  return (
+    new Set(
+      str
+        .toLowerCase()
+        .replace(/[^a-z]/g, "")
+        .split(""),
+    ).size >= alphabet.length
+  );
 };
